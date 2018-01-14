@@ -70,8 +70,8 @@ int main( int argc, char** argv )
 			//grid(img);
 
 			putText(img, c->getStrChord(), Point(10, 10), FONT_HERSHEY_PLAIN, 1.0, CV_RGB(0,255,0), 2.0);
-			putText(img, c->getStrAvaChars(), Point(10, 30), FONT_HERSHEY_PLAIN, 1.0, CV_RGB(0,255,0), 2.0);
-			putText(img, c->getStrDetectedChars(), Point(10, 40), FONT_HERSHEY_PLAIN, 1.0, CV_RGB(0,255,0), 2.0);
+			putText(img, "Ava: "+c->getStrAvaChars(), Point(10, 30), FONT_HERSHEY_PLAIN, 1.0, CV_RGB(0,255,0), 2.0);
+			putText(img, "Res: "+c->getStrDetectedChars(), Point(10, 40), FONT_HERSHEY_PLAIN, 1.0, CV_RGB(0,255,0), 2.0);
 
 			if (c->hasCleared())
 			{
@@ -85,7 +85,7 @@ int main( int argc, char** argv )
 				}
 				else
 				{
-					line(imgLines, c->getPos(), c->getLast(), Scalar(0,0,255), 2);
+					cv::line(imgLines, c->getPos(), c->getLast(), Scalar(0,0,255), 2);
 				}
 			}
 

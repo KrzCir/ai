@@ -38,8 +38,10 @@ string Character::getStrAvaChars()
 	string	res = "";
 
 	for (int cLen=0; cLen<charsSize() && chars[cLen].getMatch(); cLen++)
+	{
 		res += chars[cLen].getName();
-
+		res += "(" + std::to_string(chars[cLen].getCurPos()) + ") ";
+	}
 	return res;
 }
 
@@ -182,7 +184,10 @@ char Character::match(Point &p0, Point p, double range)
 
 			// sprawdzenie czy przeszedl wszystkie sciezki
 			if (chars[cLen].getSize() <= chars[cLen].getCurPos())
+			{
 				c = chars[cLen].getName();
+				break;
+			}
 		}
 	}
 
